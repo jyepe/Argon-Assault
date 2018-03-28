@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour {
 
     [Tooltip("In ms^-1")] [SerializeField] private float xSpeed = 4f;   //Speed at which the ship will move along x-axis
     [Tooltip("In ms^-1")] [SerializeField] private float ySpeed = 4f;   //Speed at which the ship will move along y-axis
+    [SerializeField] private float xBoundaries = 5f;     //Used as min/max for clamp function so ship does not go off screen on x-axis
+    [SerializeField] private float yBoundaries = 5f;     //Used as min/max for clamp function so ship does not go off screen on y-axis
 
     // Use this for initialization
     void Start () {
@@ -33,7 +35,7 @@ public class PlayerMovement : MonoBehaviour {
         float newYPosition = yOffset + transform.localPosition.y;
 
         //Moves the ship
-        transform.localPosition = new Vector3(transform.localPosition.x, newYPosition, transform.localPosition.z);
+        transform.localPosition = new Vector3(transform.localPosition.x, Mathf.Clamp(newYPosition, -yBoundaries, yBoundaries), transform.localPosition.z);
     }
 
     private void MovementOnXAxis()
@@ -49,6 +51,6 @@ public class PlayerMovement : MonoBehaviour {
         float newXPosition = xOffset + transform.localPosition.x;
 
         //Moves the ship
-        transform.localPosition = new Vector3(newXPosition, transform.localPosition.y, transform.localPosition.z);
+        transform.localPosition = new Vector3(Mathf.Clamp( newXPosition,-xBoundaries, xBoundaries), transform.localPosition.y, transform.localPosition.z);
     }
 }
