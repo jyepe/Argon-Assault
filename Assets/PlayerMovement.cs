@@ -9,8 +9,12 @@ public class PlayerMovement : MonoBehaviour {
     [Tooltip("In ms^-1")] [SerializeField] private float Speed = 4f;   //Speed at which the ship will move along x/y-axis
     [SerializeField] private float xBoundaries = 5f;     //Used as min/max for clamp function so ship does not go off screen on x-axis
     [SerializeField] private float yBoundaries = 5f;     //Used as min/max for clamp function so ship does not go off screen on y-axis
+
+    [SerializeField] private float rotationYFactor = 5f;    //This number is used as a factor to keep the ship facing forward when moving on the x-axis
+    [SerializeField] private float rotationZFactor;         //Rotates ship on z-axis when it moves on x-axis
     [SerializeField] private float rotationXFactor = -5f;   //This number is used as a factor to keep the ship facing forward when moving on the y-axis
     [SerializeField] private float xNoseControl = -5f;      //Helps with the ships nose movement on the x-axis
+    
     private float yThrow;
     private float xThrow;
 
@@ -30,7 +34,9 @@ public class PlayerMovement : MonoBehaviour {
     private void Rotation()
     {
         float finalXRotation = rotationXFactor * transform.localPosition.y + yThrow * xNoseControl;
-        transform.localRotation = Quaternion.Euler(finalXRotation, 0f, 0f);
+        float finalYRotation = rotationYFactor * transform.localPosition.x;
+        float finalZRotation = xThrow * rotationZFactor;
+        transform.localRotation = Quaternion.Euler(finalXRotation, finalYRotation, finalZRotation);
     }
 
     private void MovementOnYAxis()
