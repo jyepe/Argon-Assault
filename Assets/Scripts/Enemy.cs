@@ -6,7 +6,8 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        BoxCollider enemyCollider = gameObject.AddComponent<BoxCollider>();
+        enemyCollider.isTrigger = false;
 	}
 	
 	// Update is called once per frame
