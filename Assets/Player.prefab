@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 198721485056781048}
   - component: {fileID: 199469057917551520}
   m_Layer: 0
-  m_Name: Laser Bullets
+  m_Name: Left Laser Bullets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 198051089222447258}
   - component: {fileID: 199380702435661480}
   m_Layer: 0
-  m_Name: Laser Bullets
+  m_Name: Right Laser Bullets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4049534043317856
 Transform:
   m_ObjectHideFlags: 1
@@ -120,8 +120,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1745474555436856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 898.3585, y: 5.0786767, z: 308.15933}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.56, y: 0.25, z: 0.45}
   m_Children: []
   m_Father: {fileID: 4347623323889470}
   m_RootOrder: 2
@@ -316,6 +316,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15de480625d376a4bb4f1c5c4e2a6b82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 1745474555436856}
+  playerShip: {fileID: 1245891726422578}
+  levelDelay: 0.5
 --- !u!198 &198051089222447258
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -376,7 +379,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1030969621
+  randomSeed: -1878527112
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3689,7 +3692,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -3737,14 +3740,14 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -910335945
+  randomSeed: -1364808171
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.23
+      scalar: 0.09
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3785,7 +3788,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 41.2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3889,7 +3892,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 4.45
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4640,22 +4643,22 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 0.08275862, b: 0, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 1, g: 0.08275862, b: 0, a: 0}
-        key3: {r: 1, g: 0.08275862, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 0.9558824, g: 0.5735294, b: 0, a: 1}
+        key2: {r: 1, g: 0.52619135, b: 0, a: 0}
+        key3: {r: 1, g: 0.8896551, b: 0, a: 0}
+        key4: {r: 1, g: 1, b: 1, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 0
-        ctime1: 65535
-        ctime2: 60716
-        ctime3: 60716
-        ctime4: 0
+        ctime0: 7903
+        ctime1: 30262
+        ctime2: 50501
+        ctime3: 65342
+        ctime4: 65535
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 0
+        atime0: 193
         atime1: 65535
         atime2: 0
         atime3: 0
@@ -4664,7 +4667,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 2
+        m_NumColorKeys: 5
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -7098,7 +7101,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1030969621
+  randomSeed: 405171516
   InitialModule:
     serializedVersion: 3
     enabled: 1
