@@ -17,20 +17,25 @@ public class PlayerMovement : MonoBehaviour {
     
     private float yThrow;
     private float xThrow;
+    private Boolean hasNotCollided;
 
     // Use this for initialization
     void Start () {
-		
+        hasNotCollided = true;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        MovementOnXAxis();
-        MovementOnYAxis();
-        Rotation();
+        if (hasNotCollided)
+        {
+            MovementOnXAxis();
+            MovementOnYAxis();
+            Rotation();
+        }
     }
 
+    //Controls the rotation of the ship so that it's always facing forward
     private void Rotation()
     {
         float finalXRotation = rotationXFactor * transform.localPosition.y + yThrow * xNoseControl;
@@ -39,6 +44,7 @@ public class PlayerMovement : MonoBehaviour {
         transform.localRotation = Quaternion.Euler(finalXRotation, finalYRotation, finalZRotation);
     }
 
+    //Controls the movement on the y-axis
     private void MovementOnYAxis()
     {
         //Value between -1 and 1. GetAxis returns the value of the virtual axis. Value changes when you press
@@ -56,6 +62,7 @@ public class PlayerMovement : MonoBehaviour {
         
     }
 
+    //Controls the movement on the x-axis
     private void MovementOnXAxis()
     {
         //Value between -1 and 1. GetAxis returns the value of the virtual axis. Value changes when you press
@@ -71,5 +78,11 @@ public class PlayerMovement : MonoBehaviour {
         //Moves the ship
         transform.localPosition = new Vector3(Mathf.Clamp(newXPosition, -xBoundaries, xBoundaries), transform.localPosition.y, transform.localPosition.z);
         
+    }
+
+    //Metjod is called when the ship collides with something
+    private void recieveCollisionMessage(Boolean hasCollided)
+    {
+        hasNotCollided = hasCollided;
     }
 }
