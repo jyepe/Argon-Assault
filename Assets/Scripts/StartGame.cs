@@ -12,7 +12,7 @@ public class StartGame : MonoBehaviour {
 
     private void Play()
     {
-        SceneManager.LoadScene(getCurrentLevel() + 1);
+        SceneManager.LoadScene(1);
     }
 
     private int getCurrentLevel()
