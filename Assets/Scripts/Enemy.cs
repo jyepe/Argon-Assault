@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
+    [SerializeField] GameObject explosion;
+
 	// Use this for initialization
 	void Start () {
         BoxCollider enemyCollider = gameObject.AddComponent<BoxCollider>();
@@ -17,6 +19,7 @@ public class Enemy : MonoBehaviour {
 
     private void OnParticleCollision(GameObject other)
     {
+        Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
