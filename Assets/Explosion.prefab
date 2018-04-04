@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 198302379893330734}
   - component: {fileID: 199848015167897238}
   - component: {fileID: 82323352013135362}
+  - component: {fileID: 114766116791608836}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -122,6 +123,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114766116791608836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807895493566814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cdd10b086b8e84cab9dad37ad4df2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198302379893330734
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -134,7 +146,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1

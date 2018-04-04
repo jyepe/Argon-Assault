@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: dd6e5428b56af0e42b695ed3e9c88d21
+timeCreated: 1522769448
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Forvertz
+  fontNames:
+  - Forvertz
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 079cd8e2023427e46b6e835858cb72dc, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
