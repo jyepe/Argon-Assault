@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 65095162550149050}
   - component: {fileID: 114685314143175022}
   - component: {fileID: 114967414573688008}
+  - component: {fileID: 114867189895311832}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -305,6 +306,19 @@ MonoBehaviour:
   rotationZFactor: -20
   rotationXFactor: -5
   xNoseControl: -20
+--- !u!114 &114867189895311832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245891726422578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949ed0a7e8b5b0341946e5e8dac43028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftBullets: {fileID: 198721485056781048}
+  rightBullets: {fileID: 198051089222447258}
 --- !u!114 &114967414573688008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -379,7 +393,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1020598278
+  randomSeed: -1301564973
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2864,7 +2878,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minKillSpeed: 1
+    minKillSpeed: 170
     maxKillSpeed: 10000
     radiusScale: 1
     collidesWith:
@@ -7101,7 +7115,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1813598420
+  randomSeed: 1857127862
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9586,7 +9600,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minKillSpeed: 1
+    minKillSpeed: 170
     maxKillSpeed: 10000
     radiusScale: 1
     collidesWith:
