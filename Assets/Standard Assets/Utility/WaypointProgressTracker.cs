@@ -13,13 +13,13 @@ namespace UnityStandardAssets.Utility
 
         [SerializeField] private WaypointCircuit circuit; // A reference to the waypoint-based route we should follow
 
-        [SerializeField] private float lookAheadForTargetOffset = 5;
+        [SerializeField] private float lookAheadForTargetOffset = 5f;
         // The offset ahead along the route that the we will aim for
 
         [SerializeField] private float lookAheadForTargetFactor = .1f;
         // A multiplier adding distance ahead along the route to aim for, based on current speed
 
-        [SerializeField] private float lookAheadForSpeedOffset = 10;
+        [SerializeField] private float lookAheadForSpeedOffset = 10f;
         // The offset ahead only the route for speed adjustments (applied as the rotation of the waypoint target transform)
 
         [SerializeField] private float lookAheadForSpeedFactor = .2f;
@@ -64,6 +64,11 @@ namespace UnityStandardAssets.Utility
             }
 
             Reset();
+        }
+
+        public void setCameraSpeed(float speed)
+        {
+            lookAheadForTargetOffset = speed;
         }
 
 
