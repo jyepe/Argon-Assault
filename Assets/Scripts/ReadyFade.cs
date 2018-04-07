@@ -41,7 +41,6 @@ public class ReadyFade : MonoBehaviour {
         }
         catch (IndexOutOfRangeException ex)
         {
-            shoot.startShooting();
             waypoint.setCameraSpeed(1f);
         }
     }
