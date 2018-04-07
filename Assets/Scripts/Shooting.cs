@@ -6,10 +6,12 @@ public class Shooting : MonoBehaviour {
 
     [SerializeField] ParticleSystem leftBullets;
     [SerializeField] ParticleSystem rightBullets;
+    AudioSource soundPlayer;
+    [SerializeField] AudioClip lasers;
 
     // Use this for initialization
     void Start () {
-        
+        soundPlayer = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -19,6 +21,14 @@ public class Shooting : MonoBehaviour {
         {
             leftBullets.Play();
             rightBullets.Play();
+            soundPlayer.Stop();
+        }
+        else
+        {
+            if (!soundPlayer.isPlaying)
+            {
+                soundPlayer.PlayOneShot(lasers);
+            }
         }
 	}
 }
