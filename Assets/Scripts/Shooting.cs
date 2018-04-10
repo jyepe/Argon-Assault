@@ -7,7 +7,6 @@ public class Shooting : MonoBehaviour {
     [SerializeField] ParticleSystem leftBullets;
     [SerializeField] ParticleSystem rightBullets;
     AudioSource soundPlayer;
-    [SerializeField] AudioClip lasers;
 
     // Use this for initialization
     void Start () {
@@ -27,7 +26,7 @@ public class Shooting : MonoBehaviour {
         {
             if (!soundPlayer.isPlaying)
             {
-                soundPlayer.PlayOneShot(lasers);
+                soundPlayer.Play();
             }
         }
 	}

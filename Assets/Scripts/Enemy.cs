@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-    [SerializeField] GameObject explosion;
-    ScoreBoard board;
+    [SerializeField] private GameObject explosion;      //Explosion effect for the enemy ships
+    private ScoreBoard board;                           //The score on the screen
+    [Range(1,100)] [SerializeField] private int maxHits;               //The number of hits before enemy dies
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,24 @@ public class Enemy : MonoBehaviour {
 	}
 
     private void OnParticleCollision(GameObject other)
+    {
+        if (other.name == "Right Laser Bullets")
+        {
+            maxHits--;
+            shouldKill();
+        }
+    }
+
+    private void shouldKill()
+    {
+        if (maxHits <= 0)
+        {
+            killEnemy();
+        }
+    }
+
+    //Destroys enemy ship
+    private void killEnemy()
     {
         Instantiate(explosion, transform.position, Quaternion.identity);
         board.addToScore();
