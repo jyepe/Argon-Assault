@@ -10,10 +10,12 @@ public class CollisionHandler : MonoBehaviour {
     [SerializeField] GameObject playerShip;
     [SerializeField] float levelDelay;
     PickupRotation weaponPickup;
+    Shooting shootingScript;
 
 	// Use this for initialization
 	void Start () {
         weaponPickup = FindObjectOfType<PickupRotation>();
+        shootingScript = FindObjectOfType<Shooting>();
     }
 	
 	// Update is called once per frame
@@ -33,6 +35,7 @@ public class CollisionHandler : MonoBehaviour {
         {
             //SendMessage("activateWeapon", "Blaster");
             weaponPickup.playClip();
+            shootingScript.weaponWasPicked();
         }
     }
 

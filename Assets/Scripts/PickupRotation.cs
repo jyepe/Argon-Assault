@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PickupRotation : MonoBehaviour {
 
-    [SerializeField] private Vector3 rotationSpeed;
-    private AudioSource reloadClip;
+    [SerializeField] Vector3 rotationSpeed;
+    AudioSource reloadClip;
 
 	// Use this for initialization
 	void Start () {
