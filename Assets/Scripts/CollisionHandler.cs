@@ -9,11 +9,12 @@ public class CollisionHandler : MonoBehaviour {
     [SerializeField] GameObject explosion;
     [SerializeField] GameObject playerShip;
     [SerializeField] float levelDelay;
+    PickupRotation weaponPickup;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        weaponPickup = FindObjectOfType<PickupRotation>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,9 +23,17 @@ public class CollisionHandler : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        SendMessage("recieveCollisionMessage", false);
-        explosion.SetActive(true);
-        Invoke("reloadLevel", levelDelay);
+        if (other.tag.ToLower() != "blasters")
+        {
+            SendMessage("recieveCollisionMessage", false);
+            explosion.SetActive(true);
+            Invoke("reloadLevel", levelDelay);
+        }
+        else
+        {
+            //SendMessage("activateWeapon", "Blaster");
+            weaponPickup.playClip();
+        }
     }
 
     private void reloadLevel()

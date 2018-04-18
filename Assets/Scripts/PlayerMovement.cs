@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviour {
         
     }
 
-    //Metjod is called when the ship collides with something
+    //Method is called when the ship collides with something
     private void recieveCollisionMessage(Boolean hasCollided)
     {
         hasNotCollided = hasCollided;
