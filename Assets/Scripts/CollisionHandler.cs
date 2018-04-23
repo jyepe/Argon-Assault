@@ -25,17 +25,26 @@ public class CollisionHandler : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag.ToLower() != "blasters")
+        print(other.tag);
+        if (other.tag.ToLower() == "blasters")
+        {
+            shootingScript.activateWepon("blasters");
+            weaponPickup.playClip();
+            shootingScript.weaponWasPicked();
+        }
+        else if (other.tag.ToLower() == "machine blasters")
+        {
+            print("in");
+            shootingScript.activateWepon("machine blasters");
+            weaponPickup.playClip();
+            shootingScript.weaponWasPicked();
+
+        }
+        else
         {
             SendMessage("recieveCollisionMessage", false);
             explosion.SetActive(true);
             Invoke("reloadLevel", levelDelay);
-        }
-        else
-        {
-            //SendMessage("activateWeapon", "Blaster");
-            weaponPickup.playClip();
-            shootingScript.weaponWasPicked();
         }
     }
 

@@ -6,11 +6,15 @@ public class Shooting : MonoBehaviour {
 
     [SerializeField] ParticleSystem leftBullets;
     [SerializeField] ParticleSystem rightBullets;
+    ParticleSystem.EmissionModule leftEmissionModule;
+    ParticleSystem.EmissionModule rightEmissionModule;
     AudioSource soundPlayer;
     bool weaponPickedUp;
 
     // Use this for initialization
     void Start () {
+        leftEmissionModule = leftBullets.emission;
+        rightEmissionModule = rightBullets.emission;
         soundPlayer = GetComponent<AudioSource>();
         weaponPickedUp = false;
 	}
@@ -36,5 +40,19 @@ public class Shooting : MonoBehaviour {
     public void weaponWasPicked()
     {
         weaponPickedUp = true;
+    }
+
+    public void activateWepon(string weapon)
+    {
+        if (weapon.ToLower() == "blasters")
+        {
+            leftEmissionModule.rateOverTime = 3.82f;
+            rightEmissionModule.rateOverTime = 3.82f;
+        }
+        else if (weapon.ToLower() == "machine blasters")
+        {
+            leftEmissionModule.rateOverTime = 18f;
+            rightEmissionModule.rateOverTime = 18f;
+        }
     }
 }
