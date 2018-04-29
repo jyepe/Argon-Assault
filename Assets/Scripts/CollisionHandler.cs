@@ -28,17 +28,15 @@ public class CollisionHandler : MonoBehaviour {
         print(other.tag);
         if (other.tag.ToLower() == "blasters")
         {
-            shootingScript.activateWepon("blasters");
+            shootingScript.activateWeapon("blasters");
             weaponPickup.playClip();
             shootingScript.weaponWasPicked();
         }
         else if (other.tag.ToLower() == "machine blasters")
         {
-            print("in");
-            shootingScript.activateWepon("machine blasters");
+            shootingScript.activateWeapon("machine blasters");
             weaponPickup.playClip();
             shootingScript.weaponWasPicked();
-
         }
         else
         {

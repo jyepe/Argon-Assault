@@ -42,17 +42,19 @@ public class Shooting : MonoBehaviour {
         weaponPickedUp = true;
     }
 
-    public void activateWepon(string weapon)
+    public void activateWeapon(string weapon)
     {
         if (weapon.ToLower() == "blasters")
         {
             leftEmissionModule.rateOverTime = 3.82f;
             rightEmissionModule.rateOverTime = 3.82f;
+            soundPlayer.pitch = 0.9f;
         }
         else if (weapon.ToLower() == "machine blasters")
         {
             leftEmissionModule.rateOverTime = 18f;
             rightEmissionModule.rateOverTime = 18f;
+            soundPlayer.pitch = 2.15f;
         }
     }
 }
